@@ -54,6 +54,13 @@
       bottom: 0;
       width: 100%;
     }
+    .enroll-form {
+      display: none;
+      margin-top: 20px;
+    }
+    .enroll-form.active {
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -75,7 +82,23 @@
         <li><strong>Agile Project Management</strong> - \[$99\]</li>
         <li><strong>Kanban for Teams</strong> - \[$79\]</li>
       </ul>
-      <button style="background-color: #007BFF; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Enroll Now</button>
+      <button id="enrollButton" style="background-color: #007BFF; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Enroll Now</button>
+      <div id="enrollForm" class="enroll-form">
+        <h3>Enroll in a Course</h3>
+        <form>
+          <label for="course">Select Course:</label><br>
+          <select id="course" name="course">
+            <option value="scrum">Scrum Master Certification Prep</option>
+            <option value="agile">Agile Project Management</option>
+            <option value="kanban">Kanban for Teams</option>
+          </select><br>
+          <label for="name">Full Name:</label><br>
+          <input type="text" id="name" name="name" required><br>
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required><br>
+          <button type="submit" style="background-color: #007BFF; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Submit Enrollment</button>
+        </form>
+      </div>
     </div>
     <div id="templates" class="service">
       <h2>Templates/Guides</h2>
@@ -104,5 +127,11 @@
   <footer>
     <p>&copy; 2025 Agile Coaching Services. All rights reserved.</p>
   </footer>
+  <script>
+    // Show enroll form when "Enroll Now" button is clicked
+    document.getElementById('enrollButton').addEventListener('click', function() {
+      document.getElementById('enrollForm').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
