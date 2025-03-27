@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agile Coaching Services</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #007BFF, #00C6FF);
+      color: #333;
+    }
+    header {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #007BFF;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    nav a {
+      color: #007BFF;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+    nav a:hover {
+      background-color: rgba(0, 123, 255, 0.1);
+    }
+    .container {
+      padding: 20px;
+    }
+    .service {
+      background: rgba(255, 255, 255, 0.9);
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .service:hover {
+      transform: translateY(-5px);
+    }
+    .service h2 {
+      color: #007BFF;
+    }
+    footer {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #007BFF;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .enroll-form, .booking-form, .cancel-form {
+      display: none;
+      margin-top: 20px;
+    }
+    .enroll-form.active, .booking-form.active, .cancel-form.active {
+      display: block;
+    }
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .calendar button {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .calendar button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    .calendar button.selected {
+      background-color: #28a745;
+    }
+    .day-label {
+      font-weight: bold;
+      margin-top: 20px;
+      color: #007BFF;
+    }
+    button {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Agile Coaching Services</h1>
+    <p>Empowering Teams to Deliver Value Faster</p>
+  </header>
+  <nav>
+    <a href="#courses">Online Courses</a>
+    <a href="#templates">Templates/Guides</a>
+    <a href="#coaching">One-on-One Coaching</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="container">
+    <div id="courses" class="service">
+      <h2>Online Courses</h2>
+      <p>Master Agile methodologies with our comprehensive online courses. Learn at your own pace and get certified.</p>
+      <button id="enrollButton">Enroll Now</button>
+      <div id="enrollForm" class="enroll-form">
+        <h3>Enroll in a Course</h3>
+        <form action="https://formsubmit.co/wanmj@yahoo.com" method="POST">
+          <label for="course">Select Course:</label><br>
+          <select id="course" name="course" required>
+            <option value="Scrum Master Certification Prep">Scrum Master Certification Prep</option>
+            <option value="Agile Project Management">Agile Project Management</option>
+            <option value="Kanban for Teams">Kanban for Teams</option>
+          </select><br>
+          <label for="name">Full Name:</label><br>
+          <input type="text" id="name" name="name" required><br>
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required><br>
+          <button type="submit">Submit Enrollment</button>
+        </form>
+      </div>
+    </div>
+    <div id="templates" class="service">
+      <h2>Templates/Guides</h2>
+      <p>Download ready-to-use Agile templates and guides to streamline your workflows.</p>
+      <form action="https://formsubmit.co/wanmj@yahoo.com" method="POST">
+        <label for="template">Select Template:</label><br>
+        <select id="template" name="template" required>
+          <option value="Sprint Planning Template">Sprint Planning Template - \[$10\]</option>
+          <option value="Retrospective Meeting Guide">Retrospective Meeting Guide - \[$15\]</option>
+          <option value="Agile Transformation Roadmap">Agile Transformation Roadmap - \[$20\]</option>
+        </select><br>
+        <label for="quantity">Quantity:</label><br>
+        <input type="number" id="quantity" name="quantity" min="1" value="1" required><br>
+        <button type="submit">Buy Now</button>
+      </form>
+    </div>
+    <div id="coaching" class="service">
+      <h2>One-on-One Coaching</h2>
+      <p>Book a 15-minute session with me. The first session is free!</p>
+      <button id="bookButton">Book Now</button>
+      <div id="bookingForm" class="booking-form">
+        <h3>Select a Time Slot</h3>
+        <div class="day-label">Monday</div>
+        <div class="calendar">
+          <button data-day="Mon">8:00 PM</button>
+          <button data-day="Mon">8:15 PM</button>
+          <button data-day="Mon">8:30 PM</button>
+          <button data-day="Mon">8:45 PM</button>
+        </div>
+        <div class="day-label">Tuesday</div>
+        <div class="calendar">
+          <button data-day="Tue">8:00 PM</button>
+          <button data-day="Tue">8:15 PM</button>
+          <button data-day="Tue">8:30 PM</button>
+          <button data-day="Tue">8:45 PM</button>
+        </div>
+        <div class="day-label">Wednesday</div>
+        <div class="calendar">
+          <button data-day="Wed">8:00 PM</button>
+          <button data-day="Wed">8:15 PM</button>
+          <button data-day="Wed">8:30 PM</button>
+          <button data-day="Wed">8:45 PM</button>
+        </div>
+        <div class="day-label">Thursday</div>
+        <div class="calendar">
+          <button data-day="Thu">8:00 PM</button>
+          <button data-day="Thu">8:15 PM</button>
+          <button data-day="Thu">8:30 PM</button>
+          <button data-day="Thu">8:45 PM</button>
+        </div>
+        <div class="day-label">Friday</div>
+        <div class="calendar">
+          <button data-day="Fri">8:00 PM</button>
+          <button data-day="Fri">8:15 PM</button>
+          <button data-day="Fri">8:30 PM</button>
+          <button data-day="Fri">8:45 PM</button>
+        </div>
+        <form id="coachingForm" action="https://formsubmit.co/wanmj@yahoo.com" method="POST" style="margin-top: 20px;">
+          <label for="name">Full Name:</label><br>
+          <input type="text" id="name" name="name" required><br>
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required><br>
+          <input type="hidden" id="selectedTime" name="selectedTime">
+          <button type="submit">Confirm Booking</button>
+        </form>
+      </div>
+      <button id="cancelButton">Cancel Booking</button>
+      <div id="cancelForm" class="cancel-form">
+        <h3>Cancel Booking</h3>
+        <form action="https://formsubmit.co/wanmj@yahoo.com" method="POST">
+          <label for="email">Enter Your Email:</label><br>
+          <input type="email" id="email" name="email" required><br>
+          <button type="submit">Submit Cancellation</button>
+        </form>
+      </div>
+    </div>
+    <div id="contact" class="service">
+      <h2>Contact Us</h2>
+      <p>Have questions? Reach out to us for more information.</p>
+      <form action="https://formsubmit.co/wanmj@yahoo.com" method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 Agile Coaching Services. All rights reserved.</p>
+  </footer>
+  <script>
+    // Show enroll form when "Enroll Now" button is clicked
+    document.getElementById('enrollButton').addEventListener('click', function() {
+      document.getElementById('enrollForm').classList.toggle('active');
+    });
+
+    // Show booking form when "Book Now" button is clicked
+    document.getElementById('bookButton').addEventListener('click', function() {
+      document.getElementById('bookingForm').classList.toggle('active');
+    });
+
+    // Show cancel form when "Cancel Booking" button is clicked
+    document.getElementById('cancelButton').addEventListener('click', function() {
+      document.getElementById('cancelForm').classList.toggle('active');
+    });
+
+    // Handle booking form submission
+    const buttons = document.querySelectorAll('.calendar button');
+    buttons.forEach(button => {
+      button.addEventListener('click', function() {
+        document.getElementById('selectedTime').value = `${button.getAttribute('data-day')} ${button.textContent}`;
+        button.classList.add('selected');
+        button.disabled = true;
+      });
+    });
+  </script>
+</body>
+</html>
