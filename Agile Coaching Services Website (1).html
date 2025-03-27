@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agile Coaching Services</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+    }
+    nav a:hover {
+      background-color: #575757;
+    }
+    .container {
+      padding: 20px;
+    }
+    .service {
+      background: white;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .service h2 {
+      color: #007BFF;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .enroll-form {
+      display: none;
+      margin-top: 20px;
+    }
+    .enroll-form.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Agile Coaching Services</h1>
+    <p>Empowering Teams to Deliver Value Faster</p>
+  </header>
+  <nav>
+    <a href="#courses">Online Courses</a>
+    <a href="#templates">Templates/Guides</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="container">
+    <div id="courses" class="service">
+      <h2>Online Courses</h2>
+      <p>Master Agile methodologies with our comprehensive online courses. Learn at your own pace and get certified.</p>
+      <ul>
+        <li><strong>Scrum Master Certification Prep</strong> - \[$150\]</li>
+        <li><strong>Agile Project Management</strong> - \[$99\]</li>
+        <li><strong>Kanban for Teams</strong> - \[$79\]</li>
+      </ul>
+      <button id="enrollButton" style="background-color: #007BFF; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Enroll Now</button>
+      <div id="enrollForm" class="enroll-form">
+        <h3>Enroll in a Course</h3>
+        <form>
+          <label for="course">Select Course:</label><br>
+          <select id="course" name="course">
+            <option value="scrum">Scrum Master Certification Prep</option>
+            <option value="agile">Agile Project Management</option>
+            <option value="kanban">Kanban for Teams</option>
+          </select><br>
+          <label for="name">Full Name:</label><br>
+          <input type="text" id="name" name="name" required><br>
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required><br>
+          <button type="submit" style="background-color: #007BFF; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Submit Enrollment</button>
+        </form>
+      </div>
+    </div>
+    <div id="templates" class="service">
+      <h2>Templates/Guides</h2>
+      <p>Download ready-to-use Agile templates and guides to streamline your workflows.</p>
+      <ul>
+        <li><strong>Sprint Planning Template</strong> - \[$10\]</li>
+        <li><strong>Retrospective Meeting Guide</strong> - \[$15\]</li>
+        <li><strong>Agile Transformation Roadmap</strong> - \[$20\]</li>
+      </ul>
+      <button style="background-color: #007BFF; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Buy Now</button>
+    </div>
+    <div id="contact" class="service">
+      <h2>Contact Us</h2>
+      <p>Have questions? Reach out to us for more information.</p>
+      <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+        <button type="submit" style="background-color: #007BFF; color: white; padding: 10px 20px; border: none; border-radius: 5px;">Submit</button>
+      </form>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 Agile Coaching Services. All rights reserved.</p>
+  </footer>
+  <script>
+    // Show enroll form when "Enroll Now" button is clicked
+    document.getElementById('enrollButton').addEventListener('click', function() {
+      document.getElementById('enrollForm').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
